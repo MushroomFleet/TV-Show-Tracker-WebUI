@@ -1,95 +1,77 @@
-# TV Show Progress Tracker
+# 📺 TV Show Progress Tracker
 
-A simple and intuitive web application built with Gradio that helps you keep track of your TV show watching progress. Never lose track of which episode you're on again!
+A user-friendly Gradio application to track your TV show watching progress, manage your watch list, and maintain backups of your viewing history.
 
-## Features
+## 🌟 Features
 
-- **Track Progress**: Easily record which season and episode you're currently watching for any TV show
-- **Check Progress**: Quickly look up where you left off on any show
-- **Currently Watching List**: View all the shows you're currently tracking in one place
-- **User-Friendly Interface**: Simple and clean interface with sliders for season and episode selection
-- **Local Storage**: All data is stored locally during the session
+### 📝 Track Progress
+- Keep track of which episode and season you're on for multiple TV shows
+- Add optional notes for each show (supports URLs)
+- Auto-saving functionality ensures your progress is never lost
+- Visual progress indicators show whether you've moved forward (⏩) or backward (⏪) in a series
 
-## Prerequisites
+### 👀 Watch List Management
+- View all your currently watching shows in one place
+- Easy-to-read format with emoji indicators:
+  - 🆕 New shows (Season 1, Episodes 1-3)
+  - 🌟 Long-running shows (Season 3+)
+  - 🎬 Regular shows
+- Delete shows you've finished or no longer want to track
+- One-click list refresh
+- Notes preview with clickable URLs
 
-- Python 3.7 or higher
-- Windows OS (for batch files, though the app can run on any OS with Python)
+### 💾 Backup Management
+- Create timestamped backups of your watch list
+- Import backups with automatic safety features:
+  - Validates backup file format
+  - Creates an automatic backup of current data before import
+  - Supports JSON file format
 
-## Installation
+## 🚀 Getting Started
 
-1. Clone this repository:
-   ```bash
-   git clone [your-repository-url]
-   cd [repository-name]
-   ```
+1. Install the required dependencies:
+```bash
+./install.bat
+```
 
-2. Run the installation script:
-   - On Windows: Simply double-click `install.bat`
-   - On other OS:
-     ```bash
-     python -m venv venv
-     source venv/bin/activate  # On Unix/macOS
-     pip install -r requirements.txt
-     ```
+2. Run the application:
+```bash
+./run-gradio.bat
+```
 
-## Running the Application
+The application will start on `http://127.0.0.1:7861`
 
-1. Start the application:
-   - On Windows: Double-click `run-gradio.bat`
-   - On other OS:
-     ```bash
-     source venv/bin/activate  # On Unix/macOS
-     python gradio_app.py
-     ```
+## 💡 Usage
 
-2. Open your web browser and navigate to: `http://127.0.0.1:7860`
+### Adding/Updating a Show
+1. Go to the "📝 Track Progress" tab
+2. Enter the show name
+3. Select the season and episode using the sliders
+4. (Optional) Add any notes about the show or episode
+5. Click "📌 Track Progress"
 
-## Usage Guide
+### Viewing Your Watch List
+1. Navigate to the "👀 Currently Watching" tab
+2. View all your shows with their current progress
+3. Click "🔄 Refresh List" to update the display
+4. To remove a show, enter its name and click "🗑️ Remove Show"
 
-### Tracking a New Show
+### Managing Backups
+1. Go to the "💾 Backup Management" tab
+2. Click "💾 Create Backup" to save your current progress
+3. To restore from a backup:
+   - Select a backup file using the file picker
+   - Click "📥 Import Backup"
+   - A safety backup of your current data will be created automatically
 
-1. Navigate to the "Track Progress" tab
-2. Enter the TV show name in the text box
-3. Use the sliders to select:
-   - Season number (1-20)
-   - Episode number (1-30)
-4. Click "Track Progress" to save your progress
-5. You'll see a confirmation message showing your current progress
+## 📋 Data Storage
+- Progress is stored in `tv_show_progress.json`
+- Backups are saved with timestamps (e.g., `tv_show_progress_backup_20250130_225845.json`)
+- All data is stored locally on your machine
 
-### Checking Show Progress
-
-1. In the "Track Progress" tab
-2. Scroll down to the "Check Progress" section
-3. Enter the name of the show you want to check
-4. Click "Check Progress"
-5. The system will display your last saved position for that show
-
-### Viewing All Shows
-
-1. Click on the "Watching" tab
-2. You'll see a list of all shows you're currently tracking
-3. Each entry shows the show name, current season, and episode
-4. Click "Refresh List" to update the display
-
-## Technical Details
-
-- Built with Gradio 4.44.1 or higher
-- Runs on localhost (127.0.0.1) on port 7860
-- Data persists only during the current session
-- No external database required
-
-## Limitations
-
-- Data is not permanently stored and will be reset when the application is restarted
-- Maximum of 20 seasons and 30 episodes per season in the selection sliders
-- Runs in local-only mode (not accessible from other devices)
-
-## Contributing
-
-Feel free to fork this repository and submit pull requests for any improvements you'd like to add. Some potential areas for enhancement:
-- Persistent storage
-- Custom number of episodes per season
-- Show descriptions and metadata
-- Multiple user support
-- Export/import functionality
-
+## ⚠️ Notes
+- The application runs in local-only mode for security
+- Maximum supported values:
+  - Seasons: 1-20
+  - Episodes: 1-30
+  - Notes: Unlimited length with URL support
