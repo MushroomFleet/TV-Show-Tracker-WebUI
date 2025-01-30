@@ -1,4 +1,5 @@
 # 📺 TV Show Progress Tracker
+![tv-demo](https://raw.githubusercontent.com/MushroomFleet/TV-Show-Tracker-WebUI/refs/heads/main/images/tv-demo1.png)
 
 A user-friendly Gradio application to track your TV show watching progress, manage your watch list, and maintain backups of your viewing history.
 
